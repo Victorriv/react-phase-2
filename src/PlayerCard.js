@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-function PlayerCard({player,updatePlayer}){
+function PlayerCard({player,deletePlayer,updatePlayer}){
 
     const {id, name, image, likes} = player
-      
+     
 
         function likeClick(){
             const likePlayer = {
@@ -35,7 +35,7 @@ function PlayerCard({player,updatePlayer}){
             <h5> Likes: {player.likes}</h5>
             <button className= "like-btn" onClick = {likeClick}>Like</button>
 
-            {/* <button className= "delete-btn" >delete</button> */}
+            <button className= "delete-btn" onClick={(e)=>deletePlayer(player)} >delete</button>
 
             <hr/>
             

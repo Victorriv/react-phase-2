@@ -24,11 +24,16 @@ function App() {
 
     }
 
-   // function deletePlayer(deletePlayer){
-     // const updatedPlayers=
-     // setPlayers(updatedPlayers)
-   // }
-  
+    function deletePlayer(deletedPlayer){
+      fetch(`http://localhost:3000/players`)
+      .then((res)=>res.json())
+      .then((arrayPlayers)=>{ const updatedPlayer = arrayPlayers.filter((player)=> player.id !== deletedPlayer.id)
+        setPlayers([...updatedPlayer]) })
+        
+
+    
+      
+    }
 
     function updatePlayer(likedPlayer){ 
       const changedPlayers = players.map((player)=> player.id === likedPlayer.id ? likedPlayer: player) // 
@@ -37,11 +42,12 @@ function App() {
   
   return (
     <div className="App">
-      <Nav/>
+      <Nav/> 
       <Switch> 
       <Route exact path = "/players"> 
 
       <Players players={players}
+      deletePlayer ={deletePlayer}
       updatePlayer ={updatePlayer}/> 
       </Route>
 

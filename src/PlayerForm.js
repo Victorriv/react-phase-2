@@ -8,7 +8,6 @@ function PlayerFrom({newPlayer}){
 
         name: "",
         image: "",
-        team:"",
     })
         const addPlayer = {
             ...name,
@@ -51,10 +50,6 @@ function PlayerFrom({newPlayer}){
                     <input type = "text" name= "name" value ={name.name} onChange={handleChange}/>
 
                 </label>
-
-                <label> Team:
-                    <input type="text" name= "team" value={name.team} onChange={handleChange}/>
-                    </label>
                 <label>
                     Img: 
                     <input type ="text" name ="image" value ={name.image} onChange = {handleChange}/>
